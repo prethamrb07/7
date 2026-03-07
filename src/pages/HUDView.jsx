@@ -5,8 +5,6 @@ import {
     AlertTriangle, MessageCircle, Heart, Thermometer,
     Battery, Wifi, Clock, ChevronRight, Volume2, X
 } from 'lucide-react';
-import { contacts } from '../data/contacts';
-import { patient } from '../data/patient';
 import './HUDView.css';
 
 const scenarios = [
@@ -63,35 +61,35 @@ const scenarios = [
 
 const scenarioContent = {
     face: {
-        whisper: "That's Sarah — your daughter. She visits every Sunday. She loves you very much.",
+        whisper: "That's a familiar face — someone you know and trust. They visit often and care about you very much.",
         hudElements: [
-            { type: 'face-tag', name: 'Sarah Mitchell', relation: 'Daughter', confidence: 98 },
-            { type: 'info', text: 'Last visit: Sunday, March 2nd' },
-            { type: 'emotion', text: '😊 She seems happy to see you' },
+            { type: 'face-tag', name: 'Recognized Person', relation: 'Family', confidence: 98 },
+            { type: 'info', text: 'Recognized from your contacts' },
+            { type: 'emotion', text: '😊 They seem happy to see you' },
         ],
         background: 'living-room',
     },
     context: {
-        whisper: "You're in your kitchen at home. It's Tuesday morning, March 7th. You were about to have breakfast.",
+        whisper: "You're in your kitchen at home. It's a pleasant morning. You were about to have breakfast.",
         hudElements: [
             { type: 'location', text: '🏠 Kitchen — Your Home' },
-            { type: 'time', text: '📅 Tuesday, March 7, 2026 — 8:15 AM' },
+            { type: 'time', text: '📅 Today — Morning' },
             { type: 'activity', text: '🍳 Next: Breakfast time' },
-            { type: 'info', text: 'Maria arrives in 45 minutes' },
+            { type: 'info', text: 'Your caregiver arrives soon' },
         ],
         background: 'kitchen',
     },
     medication: {
-        whisper: "Those are your blood pressure pills — the white oval ones. You already took them this morning at 8 AM. You don't need another dose until tomorrow.",
+        whisper: "Those are your blood pressure pills — the white oval ones. You already took them this morning. You don't need another dose until tomorrow.",
         hudElements: [
-            { type: 'med-id', name: 'Lisinopril 10mg', status: 'ALREADY TAKEN', time: 'Taken at 8:00 AM', color: '#10b981' },
+            { type: 'med-id', name: 'Blood Pressure Medication', status: 'ALREADY TAKEN', time: 'Taken this morning', color: '#10b981' },
             { type: 'med-warning', text: '⚠️ Do not take another dose until tomorrow morning' },
-            { type: 'med-next', text: '💊 Next medication: Donepezil — 8:00 PM tonight' },
+            { type: 'med-next', text: '💊 Next medication: Evening dose tonight' },
         ],
         background: 'kitchen',
     },
     navigation: {
-        whisper: "Let's slow down — there are stairs just ahead. Hold the railing on your right. I've let Sarah know you're near the staircase.",
+        whisper: "Let's slow down — there are stairs just ahead. Hold the railing on your right. I've notified your caregiver.",
         hudElements: [
             { type: 'hazard', text: '⚠️ STAIRS AHEAD — 3 meters' },
             { type: 'direction', text: '👉 Hold railing on your RIGHT' },
@@ -100,30 +98,30 @@ const scenarioContent = {
         background: 'hallway',
     },
     routine: {
-        whisper: "It's 12:30 PM — lunchtime. Your caregiver Maria will be here in 20 minutes. Would you like to sit in the living room and wait?",
+        whisper: "It's lunchtime. Your caregiver will be here in 20 minutes. Would you like to sit in the living room and wait?",
         hudElements: [
             { type: 'schedule', text: '🕐 12:30 PM — Lunchtime' },
-            { type: 'upcoming', text: '👩‍⚕️ Maria arriving in 20 minutes' },
-            { type: 'suggestion', text: '🍽️ Today\'s lunch: Tomato soup & grilled cheese' },
+            { type: 'upcoming', text: '👩‍⚕️ Caregiver arriving in 20 minutes' },
+            { type: 'suggestion', text: '🍽️ Time for a healthy lunch' },
             { type: 'next', text: 'Next: Rest time at 1:30 PM' },
         ],
         background: 'living-room',
     },
     emergency: {
-        whisper: "Eleanor, you're okay. I'm right here with you. I'm calling Sarah right now. Help is on the way. Stay still and try to stay calm.",
+        whisper: "You're okay. I'm right here with you. I'm calling your emergency contact right now. Help is on the way. Stay still and try to stay calm.",
         hudElements: [
             { type: 'emergency-alert', text: '🆘 FALL DETECTED' },
-            { type: 'calling', text: '📞 Calling Sarah Mitchell...' },
+            { type: 'calling', text: '📞 Calling emergency contact...' },
             { type: 'location-sent', text: '📍 GPS location shared with emergency contacts' },
             { type: 'vitals', text: '❤️ Heart rate: 95 bpm — Monitoring' },
         ],
         background: 'hallway',
     },
     companion: {
-        whisper: "I was just thinking about that beautiful garden you planted last spring. The roses came out so lovely. Robert always said you had the greenest thumb in Portland.",
+        whisper: "I was just thinking about that beautiful garden you planted. The flowers came out so lovely. Your family always says you have the greenest thumb.",
         hudElements: [
-            { type: 'memory', text: '🌹 Spring Garden, 2019' },
-            { type: 'companion-text', text: '"Robert always loved your roses"' },
+            { type: 'memory', text: '🌹 Garden Memories' },
+            { type: 'companion-text', text: '"Your family loves your garden"' },
             { type: 'music', text: '🎵 Playing: Clair de Lune — Debussy' },
         ],
         background: 'living-room',
@@ -263,11 +261,11 @@ export default function HUDView() {
                     <div className="status-right">
                         <span className="status-item">
                             <Heart size={12} />
-                            {patient.vitals.heartRate} bpm
+                            72 bpm
                         </span>
                         <span className="status-item">
                             <Battery size={12} />
-                            {patient.glassesStatus.batteryLevel}%
+                            84%
                         </span>
                         <span className="status-item">
                             <Wifi size={12} />
@@ -314,7 +312,7 @@ export default function HUDView() {
                                     transition={{ duration: 0.5 }}
                                 >
                                     <div className="face-circle">
-                                        <span className="face-emoji">{contacts[0].avatar}</span>
+                                        <span className="face-emoji">👤</span>
                                         <div className="face-scan-ring" />
                                     </div>
                                     <motion.div
@@ -323,10 +321,10 @@ export default function HUDView() {
                                         animate={{ x: 0, opacity: 1 }}
                                         transition={{ delay: 0.5 }}
                                     >
-                                        <div className="face-name">{contacts[0].name}</div>
+                                        <div className="face-name">Recognized Person</div>
                                         <div className="face-relation">
                                             <span className="relation-dot" />
-                                            {contacts[0].relationship}
+                                            Family
                                         </div>
                                         <div className="face-confidence">
                                             Confidence: {scenario.hudElements[0].confidence}%
@@ -423,14 +421,14 @@ export default function HUDView() {
                 {/* Bottom Info */}
                 <div className="hud-bottom-bar">
                     <span className="hud-label">
-                        Patient: {patient.firstName} {patient.lastName}
+                        Pehchan HUD — Demo Mode
                     </span>
                     <span className="hud-label">
                         <Thermometer size={12} />
-                        {patient.vitals.bodyTemp}°F
+                        98.4°F
                     </span>
                     <span className="hud-label">
-                        Steps: {patient.vitals.stepsToday.toLocaleString()}
+                        Steps: 1,247
                     </span>
                 </div>
             </div>

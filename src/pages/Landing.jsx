@@ -181,7 +181,7 @@ export default function Landing() {
                                 <div className="lens-hud">
                                     <div className="hud-element hud-name">
                                         <span className="hud-dot" />
-                                        Sarah — Daughter
+                                        Recognized — Family
                                     </div>
                                     <div className="hud-element hud-time">10:30 AM · Tuesday</div>
                                     <div className="hud-element hud-heart">❤️ 72 bpm</div>
