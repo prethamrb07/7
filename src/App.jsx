@@ -1,25 +1,46 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
+import ProtectedRoute from './components/ProtectedRoute';
 import Navbar from './components/Navbar';
 import Landing from './pages/Landing';
 import HUDView from './pages/HUDView';
 import Dashboard from './pages/Dashboard';
 import FaceRegister from './pages/FaceRegister';
 import FaceLive from './pages/FaceLive';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+
+function AppLayout() {
+  const location = useLocation();
+  const isAuthPage = ['/login', '/signup'].includes(location.pathname);
+
+  return (
+    <>
+      {!isAuthPage && <Navbar />}
+      <Routes>
+        {/* Public routes */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+
+        {/* Protected routes */}
+        <Route path="/" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
+        <Route path="/hud" element={<ProtectedRoute><HUDView /></ProtectedRoute>} />
+        <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+        <Route path="/faces/register" element={<ProtectedRoute><FaceRegister /></ProtectedRoute>} />
+        <Route path="/faces/live" element={<ProtectedRoute><FaceLive /></ProtectedRoute>} />
+      </Routes>
+    </>
+  );
+}
 
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/hud" element={<HUDView />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/faces/register" element={<FaceRegister />} />
-        <Route path="/faces/live" element={<FaceLive />} />
-      </Routes>
+      <AuthProvider>
+        <AppLayout />
+      </AuthProvider>
     </BrowserRouter>
   );
 }
 
 export default App;
-
