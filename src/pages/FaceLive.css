@@ -1,0 +1,412 @@
+/* ========================================
+   FACE LIVE RECOGNITION PAGE
+   ======================================== */
+.live-page {
+    background: #060a14;
+}
+
+.live-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--space-4) var(--space-6);
+}
+
+/* Status Bar */
+.live-status-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-3) var(--space-5);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-4);
+}
+
+.live-status-left {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    color: var(--color-accent-primary);
+}
+
+.live-title {
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+.live-badge-green {
+    font-size: 10px;
+    font-weight: 700;
+    color: #34d399;
+    letter-spacing: 0.05em;
+    animation: pulse-glow 2s infinite;
+}
+
+.live-status-right {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+}
+
+.live-fps {
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+}
+
+.live-registered {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Grid */
+.live-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: var(--space-5);
+    align-items: start;
+}
+
+/* Camera Column */
+.live-camera-col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.live-camera-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: #0a0e1a;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+}
+
+.live-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scaleX(-1);
+}
+
+.live-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scaleX(-1);
+}
+
+/* Camera overlay */
+.live-recognition-overlay {
+    position: absolute;
+    bottom: var(--space-4);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.overlay-name-tag {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    background: rgba(16, 185, 129, 0.2);
+    backdrop-filter: blur(12px);
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #34d399;
+    font-weight: 700;
+    font-size: var(--font-size-sm);
+}
+
+.overlay-conf {
+    font-size: var(--font-size-xs);
+    opacity: 0.8;
+}
+
+.unknown-tag {
+    background: rgba(245, 158, 11, 0.2);
+    border-color: rgba(245, 158, 11, 0.3);
+    color: #fbbf24;
+}
+
+.btn-stop {
+    align-self: center;
+}
+
+.btn-large {
+    padding: var(--space-4) var(--space-6);
+    font-size: var(--font-size-base);
+}
+
+/* Recognition Card */
+.recognition-card {
+    padding: var(--space-6);
+    min-height: 300px;
+}
+
+.recognition-card:hover {
+    transform: none;
+}
+
+.waiting-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: var(--space-3);
+    color: var(--color-text-muted);
+}
+
+.waiting-icon {
+    opacity: 0.3;
+}
+
+.waiting-card h3 {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--color-text-secondary);
+}
+
+.waiting-card p {
+    font-size: var(--font-size-sm);
+    max-width: 280px;
+    line-height: 1.5;
+}
+
+/* Recognized Header */
+.rec-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    margin-bottom: var(--space-5);
+}
+
+.rec-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 3px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 800;
+    background: rgba(255, 255, 255, 0.03);
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.rec-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.rec-identity {
+    flex: 1;
+}
+
+.rec-identity h2 {
+    font-size: var(--font-size-xl);
+    font-weight: 800;
+    margin-bottom: var(--space-1);
+}
+
+.rec-relation {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+}
+
+/* Confidence Ring */
+.rec-confidence {
+    text-align: center;
+}
+
+.conf-ring {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: conic-gradient(var(--conf-color) var(--conf),
+            rgba(255, 255, 255, 0.06) var(--conf));
+    position: relative;
+}
+
+.conf-ring::before {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border-radius: 50%;
+    background: var(--color-bg-secondary);
+}
+
+.conf-ring span {
+    position: relative;
+    z-index: 1;
+    font-size: var(--font-size-sm);
+    font-weight: 800;
+    color: var(--color-text-primary);
+}
+
+.conf-label {
+    font-size: 10px;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 4px;
+    display: block;
+}
+
+/* Expression */
+.rec-expression {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-4);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}
+
+.rec-emoji {
+    font-size: 24px;
+}
+
+/* ========================================
+   RECOGNITION INFO BLOCK
+   ======================================== */
+.rec-info-block {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.rec-info-row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: var(--space-3) var(--space-4);
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: var(--radius-md);
+}
+
+.rec-info-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.rec-info-value {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+    line-height: 1.5;
+}
+
+/* ========================================
+   REGISTERED PEOPLE LIST
+   ======================================== */
+.registered-list {
+    margin-top: var(--space-4);
+    padding: var(--space-4) !important;
+}
+
+.registered-list:hover {
+    transform: none;
+}
+
+.registered-list-title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: var(--space-3);
+}
+
+.registered-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-2) 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.registered-item:last-child {
+    border-bottom: none;
+}
+
+.registered-thumb {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.registered-initial {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 800;
+    background: rgba(255, 255, 255, 0.03);
+    flex-shrink: 0;
+}
+
+.registered-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.registered-name {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.registered-rel {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .live-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .live-container {
+        padding: var(--space-3);
+    }
+
+    .live-status-bar {
+        flex-direction: column;
+        gap: var(--space-2);
+    }
+}

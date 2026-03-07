@@ -1,0 +1,42 @@
+export const patient = {
+  id: 'p-001',
+  firstName: 'Eleanor',
+  lastName: 'Mitchell',
+  age: 78,
+  dateOfBirth: '1948-03-15',
+  condition: "Alzheimer's Disease — Moderate Stage",
+  cognitiveLevel: 'moderate',
+  preferredLanguage: 'English',
+  secondaryLanguage: 'Spanish',
+  address: '142 Maple Lane, Portland, OR',
+  emergencyContact: {
+    name: 'Sarah Mitchell',
+    relationship: 'Daughter',
+    phone: '(503) 555-0147',
+  },
+  physician: {
+    name: 'Dr. James Hartwell',
+    specialty: 'Neurology',
+    phone: '(503) 555-0199',
+  },
+  preferences: {
+    favoriteMusic: 'Classical — Chopin, Debussy',
+    favoriteColor: 'Lavender',
+    hobbies: ['Gardening', 'Watercolor painting', 'Reading poetry'],
+    favoriteFood: 'Tomato soup with grilled cheese',
+    pets: 'A orange tabby cat named Sunshine',
+  },
+  vitals: {
+    heartRate: 72,
+    bodyTemp: 98.4,
+    stepsToday: 1247,
+    sleepHours: 7.2,
+    lastFallDetected: null,
+    mood: 'calm',
+  },
+  glassesStatus: {
+    batteryLevel: 84,
+    connected: true,
+    lastSync: '2026-03-07T10:30:00',
+  },
+};
