@@ -224,7 +224,7 @@ function OverviewTab({ liveActivities, liveSummary, liveStats, backendOnline }) 
                     label="Heart Rate"
                     value={`${patient.vitals.heartRate}`}
                     unit="bpm"
-                    color="#f43f5e"
+                    color="#d4917a"
                     status="Normal"
                 />
                 <VitalCard
@@ -232,7 +232,7 @@ function OverviewTab({ liveActivities, liveSummary, liveStats, backendOnline }) 
                     label="Temperature"
                     value={`${patient.vitals.bodyTemp}`}
                     unit="°F"
-                    color="#f59e0b"
+                    color="#d4956b"
                     status="Normal"
                 />
                 <VitalCard
@@ -240,7 +240,7 @@ function OverviewTab({ liveActivities, liveSummary, liveStats, backendOnline }) 
                     label="Steps Today"
                     value={patient.vitals.stepsToday.toLocaleString()}
                     unit=""
-                    color="#3b82f6"
+                    color="#7c8a5c"
                     status="On track"
                 />
                 <VitalCard
@@ -248,7 +248,7 @@ function OverviewTab({ liveActivities, liveSummary, liveStats, backendOnline }) 
                     label="Sleep Last Night"
                     value={`${patient.vitals.sleepHours}`}
                     unit="hrs"
-                    color="#8b5cf6"
+                    color="#b8a89a"
                     status="Good"
                 />
             </div>
@@ -263,7 +263,7 @@ function OverviewTab({ liveActivities, liveSummary, liveStats, backendOnline }) 
                             label="Activities"
                             value={`${liveStats.total_activities_today}`}
                             unit=""
-                            color="#3b82f6"
+                            color="#7c8a5c"
                             status="Today"
                         />
                         <VitalCard
@@ -271,7 +271,7 @@ function OverviewTab({ liveActivities, liveSummary, liveStats, backendOnline }) 
                             label="Alerts"
                             value={`${liveStats.total_alerts_today}`}
                             unit=""
-                            color="#f59e0b"
+                            color="#d4956b"
                             status={liveStats.critical_alerts_today > 0 ? `${liveStats.critical_alerts_today} critical` : 'None critical'}
                         />
                         <VitalCard
@@ -279,7 +279,7 @@ function OverviewTab({ liveActivities, liveSummary, liveStats, backendOnline }) 
                             label="Conversations"
                             value={`${liveStats.conversations_today}`}
                             unit=""
-                            color="#8b5cf6"
+                            color="#b8a89a"
                             status="Processed"
                         />
                         <VitalCard
@@ -287,7 +287,7 @@ function OverviewTab({ liveActivities, liveSummary, liveStats, backendOnline }) 
                             label="Orientation"
                             value={`${liveStats.orientation_assists_today}`}
                             unit=""
-                            color="#10b981"
+                            color="#8a9a68"
                             status="Assists"
                         />
                     </div>
@@ -447,7 +447,7 @@ function MedicationsTab() {
                         />
                         <Bar
                             dataKey="percentage"
-                            fill="#3b82f6"
+                            fill="#7c8a5c"
                             radius={[6, 6, 0, 0]}
                             name="Adherence %"
                         />
@@ -653,12 +653,12 @@ function TrendsTab() {
                         <AreaChart data={cognitiveData}>
                             <defs>
                                 <linearGradient id="engGrad" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="0%" stopColor="#3b82f6" stopOpacity={0.3} />
-                                    <stop offset="100%" stopColor="#3b82f6" stopOpacity={0} />
+                                    <stop offset="0%" stopColor="#7c8a5c" stopOpacity={0.3} />
+                                    <stop offset="100%" stopColor="#7c8a5c" stopOpacity={0} />
                                 </linearGradient>
                                 <linearGradient id="oriGrad" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="0%" stopColor="#8b5cf6" stopOpacity={0.3} />
-                                    <stop offset="100%" stopColor="#8b5cf6" stopOpacity={0} />
+                                    <stop offset="0%" stopColor="#b8a89a" stopOpacity={0.3} />
+                                    <stop offset="100%" stopColor="#b8a89a" stopOpacity={0} />
                                 </linearGradient>
                             </defs>
                             <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
@@ -675,7 +675,7 @@ function TrendsTab() {
                             <Area
                                 type="monotone"
                                 dataKey="engagement"
-                                stroke="#3b82f6"
+                                stroke="#7c8a5c"
                                 fill="url(#engGrad)"
                                 name="Engagement"
                                 strokeWidth={2}
@@ -683,7 +683,7 @@ function TrendsTab() {
                             <Area
                                 type="monotone"
                                 dataKey="orientation"
-                                stroke="#8b5cf6"
+                                stroke="#b8a89a"
                                 fill="url(#oriGrad)"
                                 name="Orientation"
                                 strokeWidth={2}
@@ -710,18 +710,18 @@ function TrendsTab() {
                             <Line
                                 type="monotone"
                                 dataKey="recognition"
-                                stroke="#10b981"
+                                stroke="#8a9a68"
                                 name="Recognition"
                                 strokeWidth={2}
-                                dot={{ fill: '#10b981', r: 4 }}
+                                dot={{ fill: '#8a9a68', r: 4 }}
                             />
                             <Line
                                 type="monotone"
                                 dataKey="mood"
-                                stroke="#f59e0b"
+                                stroke="#d4956b"
                                 name="Mood"
                                 strokeWidth={2}
-                                dot={{ fill: '#f59e0b', r: 4 }}
+                                dot={{ fill: '#d4956b', r: 4 }}
                             />
                         </LineChart>
                     </ResponsiveContainer>
@@ -750,7 +750,7 @@ function TrendsTab() {
                         />
                         <Bar
                             dataKey="percentage"
-                            fill="#10b981"
+                            fill="#8a9a68"
                             radius={[6, 6, 0, 0]}
                             name="Adherence %"
                         />

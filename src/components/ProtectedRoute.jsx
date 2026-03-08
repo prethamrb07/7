@@ -11,7 +11,7 @@ export default function ProtectedRoute({ children }) {
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 minHeight: '100vh', background: '#060a14'
             }}>
-                <Loader className="spin" size={32} style={{ color: '#3b82f6' }} />
+                <Loader className="spin" size={32} style={{ color: '#7c8a5c' }} />
             </div>
         );
     }

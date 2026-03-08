@@ -10,6 +10,7 @@ import FaceLive from './pages/FaceLive';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import HealthScreening from './pages/HealthScreening';
+import OmiConnect from './pages/OmiConnect';
 
 function AppLayout() {
   const location = useLocation();
@@ -30,6 +31,7 @@ function AppLayout() {
         <Route path="/faces/register" element={<ProtectedRoute><FaceRegister /></ProtectedRoute>} />
         <Route path="/faces/live" element={<ProtectedRoute><FaceLive /></ProtectedRoute>} />
         <Route path="/health" element={<ProtectedRoute><HealthScreening /></ProtectedRoute>} />
+        <Route path="/omi" element={<ProtectedRoute><OmiConnect /></ProtectedRoute>} />
       </Routes>
     </>
   );

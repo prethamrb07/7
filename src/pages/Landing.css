@@ -71,8 +71,8 @@
     align-items: center;
     gap: var(--space-2);
     padding: var(--space-2) var(--space-4);
-    background: rgba(59, 130, 246, 0.1);
-    border: 1px solid rgba(59, 130, 246, 0.2);
+    background: rgba(124, 138, 92, 0.1);
+    border: 1px solid rgba(124, 138, 92, 0.2);
     border-radius: var(--radius-full);
     font-size: var(--font-size-sm);
     font-weight: 500;
@@ -163,13 +163,13 @@
 .glasses-lens {
     width: 170px;
     height: 120px;
-    border: 3px solid rgba(59, 130, 246, 0.5);
+    border: 3px solid rgba(124, 138, 92, 0.5);
     border-radius: 20px 60px 30px 50px;
-    background: rgba(59, 130, 246, 0.05);
+    background: rgba(124, 138, 92, 0.05);
     backdrop-filter: blur(5px);
     position: relative;
     overflow: hidden;
-    box-shadow: 0 0 30px rgba(59, 130, 246, 0.15), inset 0 0 20px rgba(59, 130, 246, 0.05);
+    box-shadow: 0 0 30px rgba(124, 138, 92, 0.15), inset 0 0 20px rgba(124, 138, 92, 0.05);
 }
 
 .right-lens {
@@ -179,7 +179,7 @@
 .glasses-bridge {
     width: 40px;
     height: 20px;
-    border-bottom: 3px solid rgba(59, 130, 246, 0.5);
+    border-bottom: 3px solid rgba(124, 138, 92, 0.5);
     border-radius: 0 0 20px 20px;
     margin: 0 -2px;
     align-self: flex-start;
@@ -194,7 +194,7 @@
     position: absolute;
     width: 80px;
     height: 3px;
-    background: rgba(59, 130, 246, 0.5);
+    background: rgba(124, 138, 92, 0.5);
     top: -90px;
 }
 
@@ -232,8 +232,8 @@
 }
 
 .hud-name {
-    color: #60a5fa;
-    background: rgba(59, 130, 246, 0.15);
+    color: #6b7a4e;
+    background: rgba(124, 138, 92, 0.15);
     font-size: 11px;
 }
 
@@ -241,7 +241,7 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: #10b981;
+    background: #8a9a68;
     animation: blink 2s infinite;
 }
 
@@ -257,8 +257,8 @@
 }
 
 .hud-reminder {
-    color: #fbbf24;
-    background: rgba(245, 158, 11, 0.1);
+    color: #b8804f;
+    background: rgba(212, 149, 107, 0.1);
     font-size: 10px;
 }
 
@@ -273,8 +273,8 @@
 .section-tag {
     display: inline-block;
     padding: var(--space-1) var(--space-4);
-    background: rgba(59, 130, 246, 0.1);
-    border: 1px solid rgba(59, 130, 246, 0.2);
+    background: rgba(124, 138, 92, 0.1);
+    border: 1px solid rgba(124, 138, 92, 0.2);
     border-radius: var(--radius-full);
     font-size: var(--font-size-xs);
     font-weight: 600;
@@ -387,7 +387,7 @@
     justify-content: center;
     width: 40px;
     height: 40px;
-    background: rgba(59, 130, 246, 0.1);
+    background: rgba(124, 138, 92, 0.1);
     border-radius: var(--radius-lg);
     color: var(--color-accent-primary);
     margin-bottom: var(--space-3);
@@ -427,8 +427,8 @@
     justify-content: center;
     width: 64px;
     height: 64px;
-    background: rgba(16, 185, 129, 0.1);
-    border: 1px solid rgba(16, 185, 129, 0.2);
+    background: rgba(138, 154, 104, 0.1);
+    border: 1px solid rgba(138, 154, 104, 0.2);
     border-radius: var(--radius-2xl);
     color: var(--color-accent-success);
     margin-bottom: var(--space-6);

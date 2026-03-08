@@ -1,5 +1,5 @@
 import { NavLink, useNavigate } from 'react-router-dom';
-import { Eye, LayoutDashboard, Activity, ScanFace, UserPlus, LogOut } from 'lucide-react';
+import { Eye, LayoutDashboard, Activity, ScanFace, UserPlus, LogOut, Bluetooth } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import './Navbar.css';
 
@@ -38,6 +38,9 @@ export default function Navbar() {
                     </NavLink>
                     <NavLink to="/dashboard" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
                         <LayoutDashboard size={16} /> Dashboard
+                    </NavLink>
+                    <NavLink to="/omi" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+                        <Bluetooth size={16} /> Omi
                     </NavLink>
                 </div>
 

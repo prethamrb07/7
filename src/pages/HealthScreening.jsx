@@ -59,21 +59,21 @@ export default function HealthScreening() {
             name: 'Breathing Analysis',
             desc: 'Record your breathing to detect irregularities',
             icon: <Wind size={22} />,
-            gradient: 'linear-gradient(135deg, #10b981, #06b6d4)',
+            gradient: 'linear-gradient(135deg, #8a9a68, #a3b07e)',
         },
         {
             id: 'speech',
             name: 'Speech Clarity',
             desc: 'Read a phrase aloud to test speech patterns',
             icon: <MessageSquare size={22} />,
-            gradient: 'linear-gradient(135deg, #8b5cf6, #ec4899)',
+            gradient: 'linear-gradient(135deg, #b8a89a, #d4917a)',
         },
         {
             id: 'memory',
             name: 'Memory Pattern',
             desc: 'Remember and repeat a visual pattern',
             icon: <Grid3X3 size={22} />,
-            gradient: 'linear-gradient(135deg, #3b82f6, #06b6d4)',
+            gradient: 'linear-gradient(135deg, #7c8a5c, #a3b07e)',
         },
     ];
 
@@ -86,7 +86,7 @@ export default function HealthScreening() {
                     </h1>
                     <p>
                         Quick cognitive and respiratory assessments to monitor early warning signs.
-                        Inspired by <a href="https://github.com/neel-banga/BrainWave-MountainHacks" target="_blank" rel="noopener" style={{ color: '#3b82f6' }}>BrainWave</a>.
+                        Inspired by <a href="https://github.com/neel-banga/BrainWave-MountainHacks" target="_blank" rel="noopener" style={{ color: '#7c8a5c' }}>BrainWave</a>.
                     </p>
                     <div className="screening-disclaimer">
                         <AlertTriangle size={14} />
@@ -268,7 +268,7 @@ function BreathTest({ result, onResult }) {
         const level = result.score >= 75 ? 'good' : result.score >= 50 ? 'moderate' : 'concern';
         return (
             <div className="test-result">
-                <Activity size={32} style={{ color: '#10b981', marginBottom: 12 }} />
+                <Activity size={32} style={{ color: '#8a9a68', marginBottom: 12 }} />
                 <div className={`result-score ${level}`}>{result.score}%</div>
                 <div className="result-label">Breathing Regularity Score</div>
                 <div className="result-message">
@@ -290,7 +290,7 @@ function BreathTest({ result, onResult }) {
     return (
         <>
             <div className="test-panel-header">
-                <Wind size={20} style={{ color: '#10b981' }} />
+                <Wind size={20} style={{ color: '#8a9a68' }} />
                 <div>
                     <h2>Breathing Analysis</h2>
                     <p>Breathe normally into your microphone for {DURATION} seconds</p>
@@ -366,7 +366,7 @@ function SpeechTest({ result, onResult }) {
         const level = result.score >= 80 ? 'good' : result.score >= 55 ? 'moderate' : 'concern';
         return (
             <div className="test-result">
-                <MessageSquare size={32} style={{ color: '#8b5cf6', marginBottom: 12 }} />
+                <MessageSquare size={32} style={{ color: '#b8a89a', marginBottom: 12 }} />
                 <div className={`result-score ${level}`}>{result.score}%</div>
                 <div className="result-label">Speech Clarity Score</div>
                 <div className="result-message">
@@ -390,7 +390,7 @@ function SpeechTest({ result, onResult }) {
     return (
         <>
             <div className="test-panel-header">
-                <MessageSquare size={20} style={{ color: '#8b5cf6' }} />
+                <MessageSquare size={20} style={{ color: '#b8a89a' }} />
                 <div>
                     <h2>Speech Clarity Test</h2>
                     <p>Read the phrase below aloud clearly</p>
@@ -503,7 +503,7 @@ function MemoryTest({ result, onResult }) {
         const level = result.score >= 75 ? 'good' : result.score >= 50 ? 'moderate' : 'concern';
         return (
             <div className="test-result">
-                <Brain size={32} style={{ color: '#3b82f6', marginBottom: 12 }} />
+                <Brain size={32} style={{ color: '#7c8a5c', marginBottom: 12 }} />
                 <div className={`result-score ${level}`}>{result.score}%</div>
                 <div className="result-label">Memory Accuracy ({result.rounds} rounds)</div>
                 <div className="result-message">
@@ -525,7 +525,7 @@ function MemoryTest({ result, onResult }) {
     return (
         <>
             <div className="test-panel-header">
-                <Grid3X3 size={20} style={{ color: '#3b82f6' }} />
+                <Grid3X3 size={20} style={{ color: '#7c8a5c' }} />
                 <div>
                     <h2>Memory Pattern Test</h2>
                     <p>Watch the pattern, then repeat it in order</p>

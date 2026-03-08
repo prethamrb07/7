@@ -130,13 +130,13 @@ export default function FaceRegister() {
 
                 const box = resized.detection.box;
                 // Blue bounding box
-                ctx.strokeStyle = '#3b82f6';
+                ctx.strokeStyle = '#7c8a5c';
                 ctx.lineWidth = 2;
                 ctx.strokeRect(box.x, box.y, box.width, box.height);
 
                 // Corner accents
                 const c = 16;
-                ctx.strokeStyle = '#60a5fa';
+                ctx.strokeStyle = '#6b7a4e';
                 ctx.lineWidth = 3;
                 ctx.beginPath(); ctx.moveTo(box.x, box.y + c); ctx.lineTo(box.x, box.y); ctx.lineTo(box.x + c, box.y); ctx.stroke();
                 ctx.beginPath(); ctx.moveTo(box.x + box.width - c, box.y); ctx.lineTo(box.x + box.width, box.y); ctx.lineTo(box.x + box.width, box.y + c); ctx.stroke();

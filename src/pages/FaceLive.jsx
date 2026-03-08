@@ -151,14 +151,14 @@ export default function FaceLive() {
                         const confidence = Math.round((1 - match.distance) * 100);
 
                         // Bounding box
-                        ctx.strokeStyle = isKnown ? '#34d399' : '#ef4444';
+                        ctx.strokeStyle = isKnown ? '#7c8a5c' : '#c97b7b';
                         ctx.lineWidth = 2.5;
                         ctx.strokeRect(box.x, box.y, box.width, box.height);
 
                         // Corner accents
                         const c = 18;
                         ctx.lineWidth = 3.5;
-                        ctx.strokeStyle = isKnown ? '#6ee7b7' : '#f87171';
+                        ctx.strokeStyle = isKnown ? '#6ee7b7' : '#b06060';
                         ctx.beginPath(); ctx.moveTo(box.x, box.y + c); ctx.lineTo(box.x, box.y); ctx.lineTo(box.x + c, box.y); ctx.stroke();
                         ctx.beginPath(); ctx.moveTo(box.x + box.width - c, box.y); ctx.lineTo(box.x + box.width, box.y); ctx.lineTo(box.x + box.width, box.y + c); ctx.stroke();
                         ctx.beginPath(); ctx.moveTo(box.x, box.y + box.height - c); ctx.lineTo(box.x, box.y + box.height); ctx.lineTo(box.x + c, box.y + box.height); ctx.stroke();
@@ -327,7 +327,7 @@ export default function FaceLive() {
                                         <div className="rec-confidence">
                                             <div className="conf-ring" style={{
                                                 '--conf': `${recognizedPerson.confidence}%`,
-                                                '--conf-color': recognizedPerson.confidence > 85 ? '#34d399' : recognizedPerson.confidence > 60 ? '#fbbf24' : '#f87171'
+                                                '--conf-color': recognizedPerson.confidence > 85 ? '#7c8a5c' : recognizedPerson.confidence > 60 ? '#b8804f' : '#b06060'
                                             }}>
                                                 <span>{recognizedPerson.confidence}%</span>
                                             </div>

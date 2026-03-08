@@ -22,37 +22,37 @@ const features = [
         icon: <Eye size={28} />,
         title: 'Face Recognition',
         description: 'Instantly identifies family, friends, and caregivers — gently whispering names and relationships to prevent social anxiety.',
-        gradient: 'linear-gradient(135deg, #3b82f6, #06b6d4)',
+        gradient: 'linear-gradient(135deg, #7c8a5c, #a3b07e)',
     },
     {
         icon: <Brain size={28} />,
         title: 'Contextual Memory',
         description: 'Detects confusion and provides gentle orientation — time, place, and situation reminders when needed most.',
-        gradient: 'linear-gradient(135deg, #8b5cf6, #ec4899)',
+        gradient: 'linear-gradient(135deg, #b8a89a, #d4917a)',
     },
     {
         icon: <Pill size={28} />,
         title: 'Medication Safety',
         description: 'Identifies pills, tracks dosages, prevents double-dosing, and confirms medications with caregivers in real time.',
-        gradient: 'linear-gradient(135deg, #10b981, #06b6d4)',
+        gradient: 'linear-gradient(135deg, #8a9a68, #a3b07e)',
     },
     {
         icon: <MapPin size={28} />,
         title: 'Navigation Guard',
         description: 'Detects hazards like stairs, busy streets, and unfamiliar areas — providing calm audiovisual guidance to safety.',
-        gradient: 'linear-gradient(135deg, #f59e0b, #ef4444)',
+        gradient: 'linear-gradient(135deg, #d4956b, #c97b7b)',
     },
     {
         icon: <Calendar size={28} />,
         title: 'Routine Anchoring',
         description: 'Maintains and gently enforces a personalized daily schedule, keeping the patient oriented throughout the day.',
-        gradient: 'linear-gradient(135deg, #06b6d4, #3b82f6)',
+        gradient: 'linear-gradient(135deg, #a3b07e, #7c8a5c)',
     },
     {
         icon: <MessageCircle size={28} />,
         title: 'Companion Chat',
         description: 'A gentle conversational companion during quiet moments — sharing memories, playing music, and providing comfort.',
-        gradient: 'linear-gradient(135deg, #ec4899, #f43f5e)',
+        gradient: 'linear-gradient(135deg, #d4917a, #d4917a)',
     },
 ];
 

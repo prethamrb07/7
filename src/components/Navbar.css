@@ -4,7 +4,7 @@
     left: 0;
     right: 0;
     z-index: 1000;
-    background: rgba(10, 14, 26, 0.85);
+    background: rgba(250, 245, 240, 0.9);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--color-border);
@@ -67,7 +67,7 @@
 
 .nav-link.active {
     color: var(--color-accent-primary);
-    background: rgba(59, 130, 246, 0.1);
+    background: rgba(124, 138, 92, 0.08);
 }
 
 .navbar-right {
@@ -86,16 +86,16 @@
     font-weight: 600;
     font-family: inherit;
     color: var(--color-text-secondary);
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(107, 101, 96, 0.04);
     border: 1px solid var(--color-border);
     cursor: pointer;
     transition: all var(--transition-base);
 }
 
 .navbar-logout:hover {
-    color: #f87171;
-    background: rgba(239, 68, 68, 0.08);
-    border-color: rgba(239, 68, 68, 0.2);
+    color: #b06060;
+    background: rgba(201, 123, 123, 0.08);
+    border-color: rgba(201, 123, 123, 0.2);
 }
 
 .navbar-user-name {
