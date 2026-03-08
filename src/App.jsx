@@ -9,6 +9,7 @@ import FaceRegister from './pages/FaceRegister';
 import FaceLive from './pages/FaceLive';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import HealthScreening from './pages/HealthScreening';
 
 function AppLayout() {
   const location = useLocation();
@@ -28,6 +29,7 @@ function AppLayout() {
         <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
         <Route path="/faces/register" element={<ProtectedRoute><FaceRegister /></ProtectedRoute>} />
         <Route path="/faces/live" element={<ProtectedRoute><FaceLive /></ProtectedRoute>} />
+        <Route path="/health" element={<ProtectedRoute><HealthScreening /></ProtectedRoute>} />
       </Routes>
     </>
   );

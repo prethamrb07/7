@@ -1,0 +1,400 @@
+/* ========================================
+   HEALTH SCREENING PAGE
+   ======================================== */
+.screening-page {
+    min-height: 100vh;
+    padding: 84px var(--space-6) var(--space-8);
+    background: var(--color-bg-primary);
+}
+
+.screening-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.screening-header {
+    text-align: center;
+    margin-bottom: var(--space-8);
+}
+
+.screening-header h1 {
+    font-size: var(--font-size-2xl);
+    font-weight: 800;
+    margin-bottom: var(--space-2);
+}
+
+.screening-header p {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.screening-disclaimer {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    justify-content: center;
+    margin-top: var(--space-3);
+    font-size: var(--font-size-xs);
+    color: #f59e0b;
+    background: rgba(245, 158, 11, 0.06);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(245, 158, 11, 0.15);
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ---- Test Selection Cards ---- */
+.test-selection {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+}
+
+.test-select-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.test-select-card:hover {
+    border-color: rgba(255, 255, 255, 0.12);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.test-select-card.active {
+    border-color: var(--color-accent-primary);
+    background: rgba(59, 130, 246, 0.05);
+}
+
+.test-select-card.completed {
+    border-color: #34d399;
+}
+
+.test-card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-3);
+    color: white;
+}
+
+.test-card-name {
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-1);
+}
+
+.test-card-desc {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    line-height: 1.4;
+}
+
+.test-card-badge {
+    position: absolute;
+    top: var(--space-2);
+    right: var(--space-2);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+}
+
+.test-card-badge.done {
+    background: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+}
+
+/* ---- Active Test Panel ---- */
+.test-panel {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+}
+
+.test-panel-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-5);
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.test-panel-header h2 {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+}
+
+.test-panel-header p {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+}
+
+/* ---- Breathing Test ---- */
+.breath-visualizer {
+    width: 100%;
+    height: 200px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-4);
+    overflow: hidden;
+}
+
+.breath-visualizer canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.breath-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    justify-content: center;
+}
+
+.breath-timer {
+    font-size: var(--font-size-2xl);
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    color: var(--color-text-primary);
+    min-width: 60px;
+    text-align: center;
+}
+
+/* ---- Speech Test ---- */
+.speech-phrase {
+    background: rgba(139, 92, 246, 0.08);
+    border: 1px solid rgba(139, 92, 246, 0.15);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
+    text-align: center;
+    margin-bottom: var(--space-5);
+}
+
+.speech-phrase-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: var(--space-2);
+}
+
+.speech-phrase-text {
+    font-size: var(--font-size-xl);
+    font-weight: 400;
+    color: var(--color-text-primary);
+    line-height: 1.5;
+    font-style: italic;
+}
+
+.speech-recognized {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-4);
+    margin-top: var(--space-4);
+}
+
+.speech-recognized-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: var(--space-2);
+}
+
+.speech-recognized-text {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    font-style: italic;
+}
+
+/* ---- Memory Test ---- */
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3);
+    max-width: 300px;
+    margin: 0 auto var(--space-5);
+}
+
+.memory-cell {
+    aspect-ratio: 1;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.04);
+    border: 2px solid var(--color-border);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.memory-cell.highlighted {
+    background: #3b82f6;
+    border-color: #3b82f6;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+}
+
+.memory-cell.selected {
+    background: rgba(139, 92, 246, 0.4);
+    border-color: #8b5cf6;
+}
+
+.memory-cell.correct {
+    background: rgba(16, 185, 129, 0.4);
+    border-color: #34d399;
+}
+
+.memory-cell.wrong {
+    background: rgba(239, 68, 68, 0.3);
+    border-color: #ef4444;
+}
+
+.memory-cell:hover:not(.highlighted) {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.memory-phase-label {
+    text-align: center;
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-4);
+    font-weight: 600;
+}
+
+.memory-round-info {
+    text-align: center;
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-3);
+}
+
+/* ---- Results ---- */
+.test-result {
+    text-align: center;
+    padding: var(--space-5);
+}
+
+.result-score {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: var(--space-2);
+}
+
+.result-score.good {
+    color: #34d399;
+}
+
+.result-score.moderate {
+    color: #fbbf24;
+}
+
+.result-score.concern {
+    color: #f87171;
+}
+
+.result-label {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-4);
+}
+
+.result-message {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    max-width: 440px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.03);
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+}
+
+/* ---- Common Test Buttons ---- */
+.test-btn {
+    padding: var(--space-3) var(--space-5);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    transition: all var(--transition-base);
+    border: none;
+}
+
+.test-btn-primary {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+.test-btn-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.test-btn-secondary {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--color-text-secondary);
+    border: 1px solid var(--color-border);
+}
+
+.test-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.test-btn-danger {
+    background: rgba(239, 68, 68, 0.12);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.test-btn-danger:hover {
+    background: rgba(239, 68, 68, 0.2);
+}
+
+.test-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.test-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    margin-top: var(--space-4);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+    .test-selection {
+        grid-template-columns: 1fr;
+    }
+
+    .memory-grid {
+        max-width: 240px;
+    }
+}
